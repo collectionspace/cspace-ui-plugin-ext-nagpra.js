@@ -11,7 +11,6 @@ export default (configContext) => {
 
   const {
     Field,
-    InputTable,
   } = configContext.recordComponents;
 
   return (
@@ -35,6 +34,10 @@ export default (configContext) => {
           <Field name="repatriationNotes" subpath="ns2:collectionobjects_nagpra">
             <Field name="repatriationNote" />
           </Field>
+          <Field
+            name="nagpraCulturalDeterminations"subpath="ns2:collectionobjects_nagpra">
+            <Field name="nagpraCulturalDetermination" />
+          </Field>
         </Col>
       </Cols>
 
@@ -47,11 +50,16 @@ export default (configContext) => {
         </Field>
       </Field>
 
-      <InputTable name="nagpraReportFiled">
-        <Field name="nagpraReportFiled" subpath="ns2:collectionobjects_nagpra" />
-        <Field name="nagpraReportFiledBy" subpath="ns2:collectionobjects_nagpra" />
-        <Field name="nagpraReportFiledDate" subpath="ns2:collectionobjects_nagpra" />
-      </InputTable>
+      <Field name="nagpraReportFiledGroupList" subpath="ns2:collectionobjects_nagpra">
+        <Field name="nagpraReportFiledGroup">
+          <Field name="nagpraReportFiled" />
+          <Field name="nagpraReportFiledWith" />
+          <Field name="nagpraReportFiledBy" />
+          <Field name="nagpraReportFiledDate" />
+          <Field name="nagpraReportFiledNote" />
+        </Field>
+      </Field>
+
     </Panel>
   );
 };

@@ -251,62 +251,123 @@ export default (configContext) => {
           },
         },
       },
-      nagpraReportFiled: {
+      nagpraReportFiledGroupList: {
         [config]: {
-          dataType: DATA_TYPE_BOOL,
-          messages: defineMessages({
-            fullName: {
-              id: 'field.collectionobjects_nagpra.nagpraReportFiled.fullName',
-              defaultMessage: 'NAGPRA report filed',
-            },
-            name: {
-              id: 'field.collectionobjects_nagpra.nagpraReportFiled.name',
-              defaultMessage: 'Report filed',
-            },
-          }),
           view: {
-            type: CheckboxInput,
+            type: CompoundInput,
           },
         },
-      },
-      nagpraReportFiledBy: {
-        [config]: {
-          messages: defineMessages({
-            fullName: {
-              id: 'field.collectionobjects_nagpra.nagpraReportFiledBy.fullName',
-              defaultMessage: 'NAGPRA report filed by',
+        nagpraReportFiledGroup: {
+          [config]: {
+            messages: defineMessages({
+              name: {
+                id: 'field.collectionobjects_nagpra.nagpraReportFiledGroup.name',
+                defaultMessage: 'Reported to National NAGPRA',
+              },
+            }),
+            repeating: true,
+            view: {
+              type: CompoundInput,
+              props: {
+                tabular: true,
+              },
             },
-            name: {
-              id: 'field.collectionobjects_nagpra.nagpraReportFiledBy.name',
-              defaultMessage: 'By',
+          },
+          nagpraReportFiled: {
+            [config]: {
+              dataType: DATA_TYPE_BOOL,
+              messages: defineMessages({
+                fullName: {
+                  id: 'field.collectionobjects_nagpra.nagpraReportFiled.fullName',
+                  defaultMessage: 'NAGPRA report filed',
+                },
+                name: {
+                  id: 'field.collectionobjects_nagpra.nagpraReportFiled.name',
+                  defaultMessage: 'Report filed',
+                },
+              }),
+              view: {
+                type: CheckboxInput,
+              },
             },
-          }),
-          view: {
-            type: AutocompleteInput,
-            props: {
-              source: 'person/local,organization/local',
+          },
+          nagpraReportFiledBy: {
+            [config]: {
+              messages: defineMessages({
+                fullName: {
+                  id: 'field.collectionobjects_nagpra.nagpraReportFiledBy.fullName',
+                  defaultMessage: 'NAGPRA report filed by',
+                },
+                name: {
+                  id: 'field.collectionobjects_nagpra.nagpraReportFiledBy.name',
+                  defaultMessage: 'Filed by',
+                },
+              }),
+              view: {
+                type: AutocompleteInput,
+                props: {
+                  source: 'person/local,organization/local',
+                },
+              },
+            },
+          },
+          nagpraReportFiledWith: {
+            [config]: {
+              messages: defineMessages({
+                fullName: {
+                  id: 'field.collectionobjects_nagpra.nagpraReportFiledWith.fullName',
+                  defaultMessage: 'NAGPRA report filed with',
+                },
+                name: {
+                  id: 'field.collectionobjects_nagpra.nagpraReportFiledWith.name',
+                  defaultMessage: 'Filed with',
+                },
+              }),
+              view: {
+                type: AutocompleteInput,
+                props: {
+                  source: 'person/local,organization/local',
+                },
+              },
+            },
+          },
+          nagpraReportFiledDate: {
+            [config]: {
+              dataType: DATA_TYPE_STRUCTURED_DATE,
+              messages: defineMessages({
+                fullName: {
+                  id: 'field.collectionobjects_nagpra.nagpraReportFiledDate.fullName',
+                  defaultMessage: 'NAGPRA report filed date',
+                },
+                name: {
+                  id: 'field.collectionobjects_nagpra.nagpraReportFiledDate.name',
+                  defaultMessage: 'Date',
+                },
+              }),
+              view: {
+                type: StructuredDateInput,
+              },
+            },
+            ...extensions.structuredDate.fields,
+          },
+          nagpraReportFiledNote: {
+            [config]: {
+              messages: defineMessages({
+                fullName: {
+                  id: 'field.collectionobjects_nagpra.nagpraReportFiledNote.fullName',
+                  defaultMessage: 'Reporting note',
+                },
+                name: {
+                  id: 'field.collectionobjects_nagpra.nagpraReportFiledNote.name',
+                  defaultMessage: 'Note',
+                },
+              }),
+              view: {
+                type: TextInput,
+              },
             },
           },
         },
-      },
-      nagpraReportFiledDate: {
-        [config]: {
-          dataType: DATA_TYPE_STRUCTURED_DATE,
-          messages: defineMessages({
-            fullName: {
-              id: 'field.collectionobjects_nagpra.nagpraReportFiledDate.fullName',
-              defaultMessage: 'NAGPRA report filed date',
-            },
-            name: {
-              id: 'field.collectionobjects_nagpra.nagpraReportFiledDate.name',
-              defaultMessage: 'Date',
-            },
-          }),
-          view: {
-            type: StructuredDateInput,
-          },
-        },
-        ...extensions.structuredDate.fields,
       },
     },
   };
