@@ -34,8 +34,8 @@ export default (configContext) => {
           <Field name="repatriationNotes" subpath="ns2:collectionobjects_nagpra">
             <Field name="repatriationNote" />
           </Field>
-          <Field
-            name="nagpraCulturalDeterminations"subpath="ns2:collectionobjects_nagpra">
+
+          <Field name="nagpraCulturalDeterminations" subpath="ns2:collectionobjects_nagpra">
             <Field name="nagpraCulturalDetermination" />
           </Field>
         </Col>
