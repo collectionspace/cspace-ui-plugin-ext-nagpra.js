@@ -65,7 +65,6 @@ export default (configContext) => {
           <Field name="nagpraReportFiledNote" />
         </Field>
       </Field>
-
     </Panel>
   );
 };
