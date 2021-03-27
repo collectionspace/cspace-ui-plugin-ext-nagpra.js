@@ -1,18 +1,24 @@
 export default (configContext) => {
   const {
+    lib,
+    layoutComponents,
+    recordComponents,
+  } = configContext;
+
+  const {
     React,
-  } = configContext.lib;
+  } = lib;
 
   const {
     Col,
     Cols,
     Panel,
     Row,
-  } = configContext.layoutComponents;
+  } = layoutComponents;
 
   const {
     Field,
-  } = configContext.recordComponents;
+  } = recordComponents;
 
   // TODO: This form does not contain some extension fields, because they are interleaved with
   // common fields in the "Claim Information" panel. These fields shoud be moved into the common

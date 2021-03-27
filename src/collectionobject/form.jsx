@@ -1,17 +1,23 @@
 export default (configContext) => {
   const {
+    lib,
+    layoutComponents,
+    recordComponents,
+  } = configContext;
+
+  const {
     React,
-  } = configContext.lib;
+  } = lib;
 
   const {
     Col,
     Cols,
     Panel,
-  } = configContext.layoutComponents;
+  } = layoutComponents;
 
   const {
     Field,
-  } = configContext.recordComponents;
+  } = recordComponents;
 
   return (
     <Panel name="nagpraCompliance" collapsible collapsed>
