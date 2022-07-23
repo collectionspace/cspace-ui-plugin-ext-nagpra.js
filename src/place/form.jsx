@@ -1,18 +1,24 @@
-const template = (configContext) => {
+export default (configContext) => {
+  const {
+    lib,
+    layoutComponents,
+    recordComponents,
+  } = configContext;
+
   const {
     React,
-  } = configContext.lib;
+  } = lib;
 
   const {
     Panel,
-  } = configContext.layoutComponents;
+  } = layoutComponents;
 
   const {
     Field,
-  } = configContext.recordComponents;
+  } = recordComponents;
 
   return (
-    <Field name="document">
+    <div>
       <Panel name="background" collapsible collapsed>
         <Field name="basicInfoList" subpath="ns2:places_nagpra">
           <Field name="basicInfo" />
@@ -56,7 +62,6 @@ const template = (configContext) => {
                   </Field>
                 </Field>
               </Panel>
-
             </Panel>
           </Field>
         </Field>
@@ -81,10 +86,6 @@ const template = (configContext) => {
           </Field>
         </Field>
       </Panel>
-    </Field>
+    </div>
   );
 };
-
-export default (configContext) => ({
-  template: template(configContext),
-});

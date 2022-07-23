@@ -14,318 +14,232 @@ export default (configContext) => {
   } = configContext.configHelpers;
 
   return {
-    document: {
-      'ns2:places_nagpra': {
+    'ns2:places_nagpra': {
+      [config]: {
+        service: {
+          ns: 'http://collectionspace.org/services/place/domain/nagpra',
+        },
+      },
+      basicInfoList: {
         [config]: {
-          service: {
-            ns: 'http://collectionspace.org/services/place/domain/nagpra',
+          view: {
+            type: CompoundInput,
           },
         },
-        assertionGroupList: {
+        basicInfo: {
           [config]: {
+            messages: defineMessages({
+              name: {
+                id: 'field.places_nagpra.basicInfo.name',
+                defaultMessage: 'Basic information',
+              },
+            }),
+            view: {
+              type: TextInput,
+              props: {
+                multiline: true,
+              },
+            },
+          },
+        },
+      },
+      nagpraHistoryList: {
+        [config]: {
+          view: {
+            type: CompoundInput,
+          },
+        },
+        nagpraHistory: {
+          [config]: {
+            messages: defineMessages({
+              name: {
+                id: 'field.places_nagpra.nagpraHistory.name',
+                defaultMessage: 'NAGPRA inventory history',
+              },
+            }),
+            view: {
+              type: TextInput,
+              props: {
+                multiline: true,
+              },
+            },
+          },
+        },
+      },
+      backgroundSummaryList: {
+        [config]: {
+          view: {
+            type: CompoundInput,
+          },
+        },
+        backgroundSummary: {
+          [config]: {
+            messages: defineMessages({
+              name: {
+                id: 'field.places_nagpra.backgroundSummary.name',
+                defaultMessage: 'Background and records summary',
+              },
+            }),
+            view: {
+              type: TextInput,
+              props: {
+                multiline: true,
+              },
+            },
+          },
+        },
+      },
+      landOwnershipInfoList: {
+        [config]: {
+          view: {
+            type: CompoundInput,
+          },
+        },
+        landOwnershipInfo: {
+          [config]: {
+            messages: defineMessages({
+              name: {
+                id: 'field.places_nagpra.landOwnershipInfo.name',
+                defaultMessage: 'Land ownership information',
+              },
+            }),
+            view: {
+              type: TextInput,
+              props: {
+                multiline: true,
+              },
+            },
+          },
+        },
+      },
+      assertionGroupList: {
+        [config]: {
+          view: {
+            type: CompoundInput,
+          },
+        },
+        assertionGroup: {
+          [config]: {
+            repeating: true,
             view: {
               type: CompoundInput,
             },
           },
-          assertionGroup: {
+          assertionName: {
             [config]: {
-              repeating: true,
+              messages: defineMessages({
+                name: {
+                  id: 'field.places_nagpra.assertionName.name',
+                  defaultMessage: 'Assertion name',
+                },
+              }),
+              view: {
+                type: TermPickerInput,
+                props: {
+                  source: 'nagpraassertionnames',
+                },
+              },
+            },
+          },
+          assertionDescription: {
+            [config]: {
+              messages: defineMessages({
+                name: {
+                  id: 'field.places_nagpra.assertionDescription.name',
+                  defaultMessage: 'Assertion description',
+                },
+              }),
+              view: {
+                type: TextInput,
+                props: {
+                  multiline: true,
+                },
+              },
+            },
+          },
+          assertionSourceGroupList: {
+            [config]: {
               view: {
                 type: CompoundInput,
               },
             },
-            assertionName: {
+            assertionSourceGroup: {
               [config]: {
                 messages: defineMessages({
                   name: {
-                    id: 'field.places_nagpra.assertionName.name',
-                    defaultMessage: 'Assertion name',
+                    id: 'field.places_nagpra.assertionSourceGroup.name',
+                    defaultMessage: 'Assertion source',
                   },
                 }),
-                view: {
-                  type: TermPickerInput,
-                  props: {
-                    source: 'nagpraassertionnames',
-                  },
-                },
-              },
-            },
-            assertionDescription: {
-              [config]: {
-                messages: defineMessages({
-                  name: {
-                    id: 'field.places_nagpra.assertionDescription.name',
-                    defaultMessage: 'Assertion description',
-                  },
-                }),
-                view: {
-                  type: TextInput,
-                  props: {
-                    multiline: true,
-                  },
-                },
-              },
-            },
-            assertionSourceGroupList: {
-              [config]: {
+                repeating: true,
                 view: {
                   type: CompoundInput,
+                  props: {
+                    tabular: true,
+                  },
                 },
               },
-              assertionSourceGroup: {
+              assertionSourceBy: {
                 [config]: {
                   messages: defineMessages({
                     name: {
-                      id: 'field.places_nagpra.assertionSourceGroup.name',
-                      defaultMessage: 'Assertion source',
+                      id: 'field.places_nagpra.assertionSourceBy.name',
+                      defaultMessage: 'By',
+                    },
+                    fullName: {
+                      id: 'field.places_nagpra.assertionSourceBy.fullName',
+                      defaultMessage: 'Assertion by',
                     },
                   }),
-                  repeating: true,
                   view: {
-                    type: CompoundInput,
+                    type: AutocompleteInput,
                     props: {
-                      tabular: true,
-                    },
-                  },
-                },
-                assertionSourceBy: {
-                  [config]: {
-                    messages: defineMessages({
-                      name: {
-                        id: 'field.places_nagpra.assertionSourceBy.name',
-                        defaultMessage: 'By',
-                      },
-                      fullName: {
-                        id: 'field.places_nagpra.assertionSourceBy.fullName',
-                        defaultMessage: 'Assertion by',
-                      },
-                    }),
-                    view: {
-                      type: AutocompleteInput,
-                      props: {
-                        source: 'person/local,person/shared,person/ulan,organization/local,organization/shared,organization/ulan',
-                      },
-                    },
-                  },
-                },
-                assertionSourceDate: {
-                  [config]: {
-                    messages: defineMessages({
-                      fullName: {
-                        id: 'field.places_nagpra.assertionSourceDate.fullName',
-                        defaultMessage: 'Assertion source date',
-                      },
-                      name: {
-                        id: 'field.places_nagpra.assertionSourceDate.name',
-                        defaultMessage: 'Date',
-                      },
-                    }),
-                    view: {
-                      type: DateInput,
-                    },
-                  },
-                },
-                assertionSourceNote: {
-                  [config]: {
-                    messages: defineMessages({
-                      fullName: {
-                        id: 'field.places_nagpra.assertionSourceNote.fullName',
-                        defaultMessage: 'Assertion source note',
-                      },
-                      name: {
-                        id: 'field.places_nagpra.assertionSourceNote.name',
-                        defaultMessage: 'Note',
-                      },
-                    }),
-                    view: {
-                      type: TextInput,
+                      source: 'person/local,person/shared,person/ulan,organization/local,organization/shared,organization/ulan',
                     },
                   },
                 },
               },
-            },
-            assertionRelatedRecords: {
-              [config]: {
-                messages: defineMessages({
-                  name: {
-                    id: 'field.places_nagpra.assertionRelatedRecords.name',
-                    defaultMessage: 'Museum records',
-                  },
-                }),
-                view: {
-                  type: TextInput,
-                  props: {
-                    multiline: true,
-                  },
-                },
-              },
-            },
-            assertionReferenceGroupList: {
-              [config]: {
-                view: {
-                  type: CompoundInput,
-                },
-              },
-              assertionReferenceGroup: {
+              assertionSourceDate: {
                 [config]: {
                   messages: defineMessages({
+                    fullName: {
+                      id: 'field.places_nagpra.assertionSourceDate.fullName',
+                      defaultMessage: 'Assertion source date',
+                    },
                     name: {
-                      id: 'field.places_nagpra.assertionReferenceGroup.name',
-                      defaultMessage: 'References',
+                      id: 'field.places_nagpra.assertionSourceDate.name',
+                      defaultMessage: 'Date',
                     },
                   }),
-                  repeating: true,
                   view: {
-                    type: CompoundInput,
-                    props: {
-                      tabular: true,
-                    },
+                    type: DateInput,
                   },
                 },
-                assertionReference: {
-                  [config]: {
-                    messages: defineMessages({
-                      fullName: {
-                        id: 'field.places_nagpra.assertionReference.fullName',
-                        defaultMessage: 'Assertion reference name',
-                      },
-                      name: {
-                        id: 'field.places_nagpra.assertionReference.name',
-                        defaultMessage: 'Name',
-                      },
-                    }),
-                    view: {
-                      type: AutocompleteInput,
-                      props: {
-                        source: 'citation/local,citation/worldcat',
-                      },
+              },
+              assertionSourceNote: {
+                [config]: {
+                  messages: defineMessages({
+                    fullName: {
+                      id: 'field.places_nagpra.assertionSourceNote.fullName',
+                      defaultMessage: 'Assertion source note',
                     },
-                  },
-                },
-                assertionReferenceNote: {
-                  [config]: {
-                    messages: defineMessages({
-                      fullName: {
-                        id: 'field.places_nagpra.assertionReferenceNote.fullName',
-                        defaultMessage: 'Assertion refence note',
-                      },
-                      name: {
-                        id: 'field.places_nagpra.assertionReferenceNote.name',
-                        defaultMessage: 'Note',
-                      },
-                    }),
-                    view: {
-                      type: TextInput,
+                    name: {
+                      id: 'field.places_nagpra.assertionSourceNote.name',
+                      defaultMessage: 'Note',
                     },
+                  }),
+                  view: {
+                    type: TextInput,
                   },
                 },
               },
             },
           },
-        },
-        basicInfoList: {
-          [config]: {
-            view: {
-              type: CompoundInput,
-            },
-          },
-          basicInfo: {
+          assertionRelatedRecords: {
             [config]: {
               messages: defineMessages({
                 name: {
-                  id: 'field.places_nagpra.basicInfo.name',
-                  defaultMessage: 'Basic information',
-                },
-              }),
-              view: {
-                type: TextInput,
-                props: {
-                  multiline: true,
-                },
-              },
-            },
-          },
-        },
-        nagpraHistoryList: {
-          [config]: {
-            view: {
-              type: CompoundInput,
-            },
-          },
-          nagpraHistory: {
-            [config]: {
-              messages: defineMessages({
-                name: {
-                  id: 'field.places_nagpra.nagpraHistory.name',
-                  defaultMessage: 'NAGPRA inventory history',
-                },
-              }),
-              view: {
-                type: TextInput,
-                props: {
-                  multiline: true,
-                },
-              },
-            },
-          },
-        },
-        backgroundSummaryList: {
-          [config]: {
-            view: {
-              type: CompoundInput,
-            },
-          },
-          backgroundSummary: {
-            [config]: {
-              messages: defineMessages({
-                name: {
-                  id: 'field.places_nagpra.backgroundSummary.name',
-                  defaultMessage: 'Background and records summary',
-                },
-              }),
-              view: {
-                type: TextInput,
-                props: {
-                  multiline: true,
-                },
-              },
-            },
-          },
-        },
-        landOwnershipInfoList: {
-          [config]: {
-            view: {
-              type: CompoundInput,
-            },
-          },
-          landOwnershipInfo: {
-            [config]: {
-              messages: defineMessages({
-                name: {
-                  id: 'field.places_nagpra.landOwnershipInfo.name',
-                  defaultMessage: 'Land ownership information',
-                },
-              }),
-              view: {
-                type: TextInput,
-                props: {
-                  multiline: true,
-                },
-              },
-            },
-          },
-        },
-        museumRecordsList: {
-          [config]: {
-            view: {
-              type: CompoundInput,
-            },
-          },
-          museumRecords: {
-            [config]: {
-              messages: defineMessages({
-                name: {
-                  id: 'field.places_nagpra.museumRecordsList.name',
+                  id: 'field.places_nagpra.assertionRelatedRecords.name',
                   defaultMessage: 'Museum records',
                 },
               }),
@@ -337,125 +251,209 @@ export default (configContext) => {
               },
             },
           },
-        },
-        manuscriptGroupList: {
-          [config]: {
-            view: {
-              type: CompoundInput,
-            },
-          },
-          manuscriptGroup: {
+          assertionReferenceGroupList: {
             [config]: {
-              messages: defineMessages({
-                name: {
-                  id: 'field.places_nagpra.manuscriptGroup.name',
-                  defaultMessage: 'Unpublished manuscripts',
-                },
-              }),
-              repeating: true,
               view: {
                 type: CompoundInput,
-                props: {
-                  tabular: true,
-                },
               },
             },
-            manuscriptReferences: {
+            assertionReferenceGroup: {
               [config]: {
                 messages: defineMessages({
                   name: {
-                    id: 'field.places_nagpra.manuscriptReferences.name',
+                    id: 'field.places_nagpra.assertionReferenceGroup.name',
                     defaultMessage: 'Reference',
                   },
-                  fullName: {
-                    id: 'field.places_nagpra.manuscriptReferences.fullName',
-                    defaultMessage: 'Unpublished manuscript reference',
-                  },
                 }),
+                repeating: true,
                 view: {
-                  type: AutocompleteInput,
+                  type: CompoundInput,
                   props: {
-                    source: 'citation/local,',
+                    tabular: true,
                   },
                 },
               },
-            },
-            manuscriptNote: {
-              [config]: {
-                messages: defineMessages({
-                  fullName: {
-                    id: 'field.places_nagpra.manuscriptNote.fullName',
-                    defaultMessage: 'Unpublished manuscript note',
+              assertionReference: {
+                [config]: {
+                  messages: defineMessages({
+                    fullName: {
+                      id: 'field.places_nagpra.assertionReference.fullName',
+                      defaultMessage: 'Assertion reference name',
+                    },
+                    name: {
+                      id: 'field.places_nagpra.assertionReference.name',
+                      defaultMessage: 'Name',
+                    },
+                  }),
+                  view: {
+                    type: AutocompleteInput,
+                    props: {
+                      source: 'citation/local,citation/worldcat',
+                    },
                   },
-                  name: {
-                    id: 'field.places_nagpra.manuscriptNote.name',
-                    defaultMessage: 'Note',
+                },
+              },
+              assertionReferenceNote: {
+                [config]: {
+                  messages: defineMessages({
+                    fullName: {
+                      id: 'field.places_nagpra.assertionReferenceNote.fullName',
+                      defaultMessage: 'Assertion refence note',
+                    },
+                    name: {
+                      id: 'field.places_nagpra.assertionReferenceNote.name',
+                      defaultMessage: 'Note',
+                    },
+                  }),
+                  view: {
+                    type: TextInput,
                   },
-                }),
-                view: {
-                  type: TextInput,
                 },
               },
             },
           },
         },
-        reportRefGroupList: {
+      },
+      museumRecordsList: {
+        [config]: {
+          view: {
+            type: CompoundInput,
+          },
+        },
+        museumRecords: {
           [config]: {
+            messages: defineMessages({
+              name: {
+                id: 'field.places_nagpra.museumRecordsList.name',
+                defaultMessage: 'Museum records',
+              },
+            }),
             view: {
-              type: CompoundInput,
+              type: TextInput,
+              props: {
+                multiline: true,
+              },
             },
           },
-          reportRefGroup: {
+        },
+      },
+      manuscriptGroupList: {
+        [config]: {
+          view: {
+            type: CompoundInput,
+          },
+        },
+        manuscriptGroup: {
+          [config]: {
+            messages: defineMessages({
+              name: {
+                id: 'field.places_nagpra.manuscriptGroup.name',
+                defaultMessage: 'Unpublished manuscript',
+              },
+            }),
+            repeating: true,
+            view: {
+              type: CompoundInput,
+              props: {
+                tabular: true,
+              },
+            },
+          },
+          manuscriptReferences: {
             [config]: {
               messages: defineMessages({
+                fullName: {
+                  id: 'field.places_nagpra.manuscriptReferences.fullName',
+                  defaultMessage: 'Unpublished manuscript reference',
+                },
                 name: {
-                  id: 'field.places_nagpra.reportRefGroup.name',
-                  defaultMessage: 'Published reports',
+                  id: 'field.places_nagpra.manuscriptReferences.name',
+                  defaultMessage: 'Reference',
                 },
               }),
-              repeating: true,
               view: {
-                type: CompoundInput,
+                type: AutocompleteInput,
                 props: {
-                  tabular: true,
+                  source: 'citation/local,',
                 },
               },
             },
-            reportReferences: {
-              [config]: {
-                messages: defineMessages({
-                  name: {
-                    id: 'field.places_nagpra.reportReferences.name',
-                    defaultMessage: 'Reference',
-                  },
-                  fullName: {
-                    id: 'field.places_nagpra.reportReferences.fullName',
-                    defaultMessage: 'Report reference',
-                  },
-                }),
-                view: {
-                  type: AutocompleteInput,
-                  props: {
-                    source: 'citation/local',
-                  },
+          },
+          manuscriptNote: {
+            [config]: {
+              messages: defineMessages({
+                fullName: {
+                  id: 'field.places_nagpra.manuscriptNote.fullName',
+                  defaultMessage: 'Unpublished manuscript note',
+                },
+                name: {
+                  id: 'field.places_nagpra.manuscriptNote.name',
+                  defaultMessage: 'Note',
+                },
+              }),
+              view: {
+                type: TextInput,
+              },
+            },
+          },
+        },
+      },
+      reportRefGroupList: {
+        [config]: {
+          view: {
+            type: CompoundInput,
+          },
+        },
+        reportRefGroup: {
+          [config]: {
+            messages: defineMessages({
+              name: {
+                id: 'field.places_nagpra.reportRefGroup.name',
+                defaultMessage: 'Published report',
+              },
+            }),
+            repeating: true,
+            view: {
+              type: CompoundInput,
+              props: {
+                tabular: true,
+              },
+            },
+          },
+          reportReferences: {
+            [config]: {
+              messages: defineMessages({
+                fullName: {
+                  id: 'field.places_nagpra.reportReferences.fullName',
+                  defaultMessage: 'Published report reference',
+                },
+                name: {
+                  id: 'field.places_nagpra.reportReferences.name',
+                  defaultMessage: 'Reference',
+                },
+              }),
+              view: {
+                type: AutocompleteInput,
+                props: {
+                  source: 'citation/local',
                 },
               },
             },
-            reportNote: {
-              [config]: {
-                messages: defineMessages({
-                  fullName: {
-                    id: 'field.places_nagpra.reportNote.fullName',
-                    defaultMessage: 'Published reports note',
-                  },
-                  name: {
-                    id: 'field.places_nagpra.reportNote.name',
-                    defaultMessage: 'Note',
-                  },
-                }),
-                view: {
-                  type: TextInput,
+          },
+          reportNote: {
+            [config]: {
+              messages: defineMessages({
+                fullName: {
+                  id: 'field.places_nagpra.reportNote.fullName',
+                  defaultMessage: 'Published report note',
                 },
+                name: {
+                  id: 'field.places_nagpra.reportNote.name',
+                  defaultMessage: 'Note',
+                },
+              }),
+              view: {
+                type: TextInput,
               },
             },
           },
