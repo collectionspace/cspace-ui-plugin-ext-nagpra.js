@@ -163,7 +163,7 @@ export default (configContext) => {
               view: {
                 type: AutocompleteInput,
                 props: {
-                  source: 'concept/archculture',
+                  source: 'concept/ethculture,concept/archculture',
                 },
               },
             },
