@@ -201,6 +201,7 @@ export default (configContext) => {
               },
               assertionSourceDate: {
                 [config]: {
+                  dataType: DATA_TYPE_DATE,
                   messages: defineMessages({
                     fullName: {
                       id: 'field.places_nagpra.assertionSourceDate.fullName',
