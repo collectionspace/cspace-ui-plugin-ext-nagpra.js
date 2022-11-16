@@ -13,6 +13,10 @@ export default (configContext) => {
     configKey: config,
   } = configContext.configHelpers;
 
+  const {
+    DATA_TYPE_DATE,
+  } = configContext.dataTypes;
+
   return {
     'ns2:places_nagpra': {
       [config]: {
