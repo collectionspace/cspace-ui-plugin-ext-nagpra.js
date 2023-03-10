@@ -19,7 +19,7 @@
   <script src="/node_modules/cspace-ui/dist/cspaceUI.js"></script>
 
   <!--
-    Load the Nagpra extension plugin. This places the
+    Load the NAGPRA extension plugin. This places the
     cspaceUIPluginExtNagpra function into the global namespace.
 
     webpack dev server generates a JS bundle into memory, and updates it as files are edited.
@@ -44,6 +44,15 @@
                 ...extensions.nagpra.collectionobject.fields,
               },
             },
+            forms: {
+              default: {
+                template: React.createElement(
+                  Field, { name: 'document' },
+                    React.createElement(Field, { name: 'objectNumber' }),
+                    extensions.nagpra.collectionobject.form,
+                ),
+              },
+            },
             messages:
               extensions.nagpra.collectionobject.messages,
           },
@@ -52,7 +61,7 @@
     };
 
     cspaceUI({
-      serverUrl: 'https://core.dev.collectionspace.org',
+      serverUrl: 'http://localhost:8180',
       prettyUrls: true,
       plugins: [
         cspaceUIPluginExtNagpra(),
