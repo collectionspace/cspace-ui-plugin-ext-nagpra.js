@@ -34,6 +34,10 @@ export default (configContext) => {
           <Field name="graveAssocCodes" subpath="ns2:collectionobjects_nagpra">
             <Field name="graveAssocCode" />
           </Field>
+
+          <Field name="nagpraNotes" subpath="ns2:collectionobjects_nagpra">
+            <Field name="nagpraNote" />
+          </Field>
         </Col>
 
         <Col>
