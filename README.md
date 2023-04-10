@@ -1,6 +1,7 @@
 # cspace-ui-plugin-ext-nagpra
 
-[![build status](https://travis-ci.org/collectionspace/cspace-ui-plugin-ext-nagpra.js.svg?branch=master)](https://travis-ci.org/collectionspace/cspace-ui-plugin-ext-nagpra.js)
+[![npm package](https://img.shields.io/npm/v/cspace-ui-plugin-ext-nagpra.svg)](https://www.npmjs.com/package/cspace-ui-plugin-ext-nagpra)
+[![continuous integration](https://github.com/collectionspace/cspace-ui-plugin-ext-nagpra.js/actions/workflows/ci-js.yml/badge.svg?branch=main&event=push)](https://github.com/collectionspace/cspace-ui-plugin-ext-nagpra.js/actions/workflows/ci-js.yml)
 
 Nagpra extension plugin for the CollectionSpace UI.
 
