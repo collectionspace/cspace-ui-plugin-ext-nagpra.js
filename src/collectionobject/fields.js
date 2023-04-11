@@ -113,7 +113,31 @@ export default (configContext) => {
             messages: defineMessages({
               name: {
                 id: 'field.collectionobjects_nagpra.nagpraCulturalDetermination.name',
-                defaultMessage: 'NAGPRA cultural determination',
+                defaultMessage: 'NAGPRA cultural determination note',
+              },
+            }),
+            repeating: true,
+            view: {
+              type: TextInput,
+              props: {
+                multiline: true,
+              },
+            },
+          },
+        },
+      },
+      nagpraNotes: {
+        [config]: {
+          view: {
+            type: CompoundInput,
+          },
+        },
+        nagpraNote: {
+          [config]: {
+            messages: defineMessages({
+              name: {
+                id: 'field.collectionobjects_nagpra.nagpraNote.name',
+                defaultMessage: 'NAGPRA note',
               },
             }),
             repeating: true,
