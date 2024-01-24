@@ -329,7 +329,7 @@ export default (configContext) => {
           [config]: {
             messages: defineMessages({
               name: {
-                id: 'field.places_nagpra.museumRecordsList.name',
+                id: 'field.places_nagpra.museumRecords.name',
                 defaultMessage: 'Museum records',
               },
             }),
