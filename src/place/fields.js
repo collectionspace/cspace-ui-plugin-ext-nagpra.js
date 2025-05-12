@@ -38,6 +38,7 @@ export default (configContext) => {
                 defaultMessage: 'Basic information',
               },
             }),
+            repeating: true,
             view: {
               type: TextInput,
               props: {
@@ -61,6 +62,7 @@ export default (configContext) => {
                 defaultMessage: 'NAGPRA inventory history',
               },
             }),
+            repeating: true,
             view: {
               type: TextInput,
               props: {
@@ -84,6 +86,7 @@ export default (configContext) => {
                 defaultMessage: 'Background and records summary',
               },
             }),
+            repeating: true,
             view: {
               type: TextInput,
               props: {
@@ -107,6 +110,7 @@ export default (configContext) => {
                 defaultMessage: 'Land ownership information',
               },
             }),
+            repeating: true,
             view: {
               type: TextInput,
               props: {
@@ -333,6 +337,7 @@ export default (configContext) => {
                 defaultMessage: 'Museum records',
               },
             }),
+            repeating: true,
             view: {
               type: TextInput,
               props: {
