@@ -128,6 +128,12 @@ export default (configContext) => {
         },
         assertionGroup: {
           [config]: {
+            messages: defineMessages({
+              name: {
+                id: 'field.places_nagpra.assertionGroup.name',
+                defaultMessage: 'Assertion',
+              },
+            }),
             repeating: true,
             view: {
               type: CompoundInput,
