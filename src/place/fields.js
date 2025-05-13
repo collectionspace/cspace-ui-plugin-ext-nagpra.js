@@ -253,6 +253,10 @@ export default (configContext) => {
           assertionRelatedRecords: {
             [config]: {
               messages: defineMessages({
+                fullName: {
+                  id: 'field.places_nagpra.assertionRelatedRecords.fullName',
+                  defaultMessage: 'Assertion museum records',
+                },
                 name: {
                   id: 'field.places_nagpra.assertionRelatedRecords.name',
                   defaultMessage: 'Museum records',
@@ -313,7 +317,7 @@ export default (configContext) => {
                   messages: defineMessages({
                     fullName: {
                       id: 'field.places_nagpra.assertionReferenceNote.fullName',
-                      defaultMessage: 'Assertion refence note',
+                      defaultMessage: 'Assertion reference note',
                     },
                     name: {
                       id: 'field.places_nagpra.assertionReferenceNote.name',
