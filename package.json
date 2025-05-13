@@ -1,6 +1,6 @@
 {
   "name": "cspace-ui-plugin-ext-nagpra",
-  "version": "2.0.1",
+  "version": "2.0.2",
   "description": "NAGPRA extension plugin for the CollectionSpace UI",
   "author": "Richard Millet <richard.millet@berkeley.edu>",
   "license": "ECL-2.0",
