@@ -38,6 +38,7 @@ export default (configContext) => {
                 defaultMessage: 'Basic information',
               },
             }),
+            repeating: true,
             view: {
               type: TextInput,
               props: {
@@ -61,6 +62,7 @@ export default (configContext) => {
                 defaultMessage: 'NAGPRA inventory history',
               },
             }),
+            repeating: true,
             view: {
               type: TextInput,
               props: {
@@ -84,6 +86,7 @@ export default (configContext) => {
                 defaultMessage: 'Background and records summary',
               },
             }),
+            repeating: true,
             view: {
               type: TextInput,
               props: {
@@ -107,6 +110,7 @@ export default (configContext) => {
                 defaultMessage: 'Land ownership information',
               },
             }),
+            repeating: true,
             view: {
               type: TextInput,
               props: {
@@ -124,6 +128,12 @@ export default (configContext) => {
         },
         assertionGroup: {
           [config]: {
+            messages: defineMessages({
+              name: {
+                id: 'field.places_nagpra.assertionGroup.name',
+                defaultMessage: 'Assertion',
+              },
+            }),
             repeating: true,
             view: {
               type: CompoundInput,
@@ -243,6 +253,10 @@ export default (configContext) => {
           assertionRelatedRecords: {
             [config]: {
               messages: defineMessages({
+                fullName: {
+                  id: 'field.places_nagpra.assertionRelatedRecords.fullName',
+                  defaultMessage: 'Assertion museum records',
+                },
                 name: {
                   id: 'field.places_nagpra.assertionRelatedRecords.name',
                   defaultMessage: 'Museum records',
@@ -303,7 +317,7 @@ export default (configContext) => {
                   messages: defineMessages({
                     fullName: {
                       id: 'field.places_nagpra.assertionReferenceNote.fullName',
-                      defaultMessage: 'Assertion refence note',
+                      defaultMessage: 'Assertion reference note',
                     },
                     name: {
                       id: 'field.places_nagpra.assertionReferenceNote.name',
@@ -333,6 +347,7 @@ export default (configContext) => {
                 defaultMessage: 'Museum records',
               },
             }),
+            repeating: true,
             view: {
               type: TextInput,
               props: {
